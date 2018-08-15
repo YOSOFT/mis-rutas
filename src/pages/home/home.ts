@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DireccionProvider } from '../../providers/direccion/direccion';
 import { Direccion } from '../../models/direccion';
+import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'page-home',
@@ -9,12 +10,21 @@ import { Direccion } from '../../models/direccion';
 })
 export class HomePage {
 
+  direcciones: Observable<Direccion[]>;
+
   constructor(
     public navCtrl: NavController,
   private servicioDireccion:DireccionProvider) {
 
   }
+  ionViewDidLoad(){
+    this.direcciones = this.servicioDireccion.direcciones;
+  }
 
+  editarDireccion(key)
+  {
+    console.log(key);
+  }
   crearDireccion(){
     let direccion = new Direccion();
     direccion.nombre = "ItTalent";

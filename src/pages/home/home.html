@@ -17,8 +17,12 @@
       </agm-info-window>
     </agm-marker>
   </agm-map>
-  <ion-card>
-
+  <ion-card *ngFor="let dir of direcciones | async">
+    <!-- {{dir | json}} -->
+    <ion-item>
+      {{dir.nombre}}, {{dir.direccion}}
+      <button ion-button item-right (click)="editarDireccion(dir.key)">Editar</button>
+    </ion-item>
   </ion-card>
   <ion-fab right bottom>
     <button ion-fab (click)="crearDireccion()">
