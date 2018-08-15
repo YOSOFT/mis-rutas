@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <agm-map [latitude]="4.638586" [longitude]="-74.1367512" [zoom]="18">
+    <agm-marker [latitude]="4.638586" [longitude]="-74.1367512">
+      <agm-info-window>
+        <div>
+          <strong>Titulo</strong>
+          <p>Informacion</p>
+        </div>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+  <ion-card>
+
+  </ion-card>
+  <ion-fab right bottom>
+    <button ion-fab (click)="crearDireccion()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

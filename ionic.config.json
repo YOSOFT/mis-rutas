@@ -1,0 +1,7 @@
+{
+  "name": "mis-rutas",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
